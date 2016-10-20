@@ -73,7 +73,7 @@ public class GenbankProxySequenceReaderTest {
 		return Arrays.asList(out);
 	}
 
-	@Test
+	//@Test
 	public void testFeatures() throws IOException, InterruptedException, CompoundNotFoundException {
 		logger.info("run test for protein: {}", gi);
 		GenbankProxySequenceReader<AminoAcidCompound> genbankReader
