@@ -28,6 +28,7 @@ import org.biojava.nbio.core.sequence.compound.AminoAcidCompound;
 import org.biojava.nbio.core.sequence.compound.AminoAcidCompoundSet;
 import org.biojava.nbio.core.sequence.compound.DNACompoundSet;
 import org.biojava.nbio.core.sequence.compound.NucleotideCompound;
+import org.biojava.nbio.core.sequence.template.LightweightProfile;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -67,6 +68,17 @@ public class MultipleSequenceAlignmentTest {
 			colDNA.add(nucleotide);
 		}
 		assertEquals(msaDNA.getCompoundsAt(3), colDNA);
+
+		assertEquals(msaProteins.getLength(),"ARNDCEQGHILKMFPSTWYVBZJX".length());
+		assertEquals(msaDNA.getLength(), "ATCGATCGATCGATCG".length());
+
+		assertEquals(msaProteins.getAlignedSequences().size(), 8);
+		assertEquals(msaDNA.getAlignedSequences().size(), 7);
+
+		System.out.print(msaProteins.toString());
+		System.out.print(msaDNA.toString());
+
+		System.out.print(msaDNA.toString(LightweightProfile.StringFormat.FASTA));
 	}
 
 }
