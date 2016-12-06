@@ -31,6 +31,7 @@ import java.util.List;
 
 import org.biojava.nbio.structure.align.util.AtomCache;
 import org.biojava.nbio.structure.contact.StructureInterface;
+import org.biojava.nbio.structure.contact.StructureInterfaceCluster;
 import org.biojava.nbio.structure.contact.StructureInterfaceList;
 import org.biojava.nbio.structure.io.FileParsingParameters;
 import org.biojava.nbio.structure.xtal.CrystalBuilder;
@@ -185,6 +186,10 @@ public class TestStructureCrossReferences {
 		CrystalBuilder cb = new CrystalBuilder(structure);
 
 		StructureInterfaceList interfaces = cb.getUniqueInterfaces();
+		interfaces.sort();
+		List<StructureInterfaceCluster> lists = interfaces.getClusters();
+		//What can I test here.
+		assertTrue(lists != null);
 
 		for (StructureInterface interf:interfaces) {
 			testInterfaceRefs(structure, interf);
