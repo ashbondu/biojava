@@ -14,7 +14,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by ashwinsl on 12/5/16.
  */
-public class SequenceTests {
+public class SequenceTest {
 
     @Test
     public void testChromosomeSequences(){
