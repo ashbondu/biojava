@@ -1,5 +1,8 @@
 package org.biojava.nbio.core.sequence;
 
+import org.biojava.nbio.core.sequence.compound.NucleotideCompound;
+import org.biojava.nbio.core.sequence.io.FastaGeneWriter;
+import org.biojava.nbio.core.sequence.io.GenericFastaHeaderFormat;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -30,6 +33,9 @@ public class SequenceTests {
             gene2.addExon(new AccessionID("t2_14_18"), 14, 18);
             sequences.add(gene1);
             sequences.add(gene2);
+
+            FastaGeneWriter fastaWriter = new FastaGeneWriter(System.out, sequences, new GenericFastaHeaderFormat<GeneSequence, NucleotideCompound>(), true);
+            fastaWriter.process();
 
             assertEquals(seq1, gene1.getParentChromosomeSequence());
             assertEquals(seq1, gene2.getParentChromosomeSequence());
