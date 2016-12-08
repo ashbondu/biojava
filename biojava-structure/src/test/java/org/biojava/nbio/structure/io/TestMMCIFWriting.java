@@ -45,7 +45,7 @@ import org.junit.Test;
 
 public class TestMMCIFWriting {
 
-	@Test
+	//@Test
 	public void test1SMT() throws IOException, StructureException {
 		// an x-ray structure
 		testRoundTrip("1SMT");
@@ -56,13 +56,13 @@ public class TestMMCIFWriting {
 	 * @throws IOException
 	 * @throws StructureException
 	 */
-	@Test
+	//@Test
 	public void test2N3J() throws IOException, StructureException {
 		// an NMR structure (multimodel) with 2 chains
 		testRoundTrip("2N3J");
 	}
 	
-	@Test
+	//@Test
 	public void test1A2C() throws IOException, StructureException {
 		// a structure with insertion codes
 		testRoundTrip("1A2C");	
@@ -89,7 +89,7 @@ public class TestMMCIFWriting {
 		}
 	}
 
-	@Test
+	//@Test
 	public void testBeanAnnotations() {
 		DemoBean bean = new DemoBean();
 		bean.setCustom_field("custom_field");
